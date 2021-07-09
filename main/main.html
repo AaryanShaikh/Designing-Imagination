@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slider</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(./images/1.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/2.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/3.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/4.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/5.jpeg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/6.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/7.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/8.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/9.jpg); background-size:cover"></div>
+      <div class="swiper-slide" style="background-image:url(./images/10.jpg); background-size:cover"></div>
+    </div>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+</body>
+</html>

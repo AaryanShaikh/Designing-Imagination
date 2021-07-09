@@ -1,0 +1,213 @@
+*{
+    cursor: url('cursor.png'), auto !important;
+}
+span{
+    display: inline-block;
+}
+@media screen {
+
+    html, body {
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-size: 18px;
+        font-family: 'Oswald', Verdana, sans-serif;
+        background: black;
+        line-height: 1.4;
+        overflow: hidden;
+    }
+
+    /*** canvas ***/
+
+    /* our canvas will have the size of our window */
+    #canvas {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1;
+    }
+
+    /*** content ***/
+
+    #content {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    #title {
+        position: fixed;
+        top: 30px;
+        right: 20px;
+        left: 6%;
+        z-index: 1;
+        pointer-events: none;
+        font-size: 1.5em;
+        line-height: 1;
+        margin: 0;
+        text-transform: uppercase;
+        color: #01fe87;
+        text-align: center;
+        text-shadow: 1px 1px 4px #000;
+    }
+
+    #planes {
+        width: calc(((100vw / 1.75) + 10vw) * 8); /* width of items * number of items */
+
+        padding: 0 2.5vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+
+        cursor: move;
+    }
+
+    .plane-wrapper {
+        position: relative;
+
+        width: calc(100vw / 1.75);
+        height: 70vh;
+        margin: auto 5vw;
+        text-align: center;
+    }
+
+    /* disable pointer events and text selection during drag */
+    #planes.dragged .plane-wrapper {
+        pointer-events: none;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .plane-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transform: translate3D(-50%, -50%, 0);
+        font-size: 4vw;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: black;
+        text-stroke: 1px white;
+        -webkit-text-stroke: 1px white;
+
+        opacity: 0;
+
+        transition: color 0.5s, opacity 0.5s;
+    }
+
+    #planes.dragged .plane-title {
+        color: transparent;
+    }
+
+    .plane-wrapper.loaded .plane-title {
+        opacity: 1;
+    }
+
+    .plane {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .plane img {
+        /* hide original images if there's no WebGL error */
+        display: none;
+        /* prevent original image from dragging */
+        pointer-events: none;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+    }
+
+    #drag-tip {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        pointer-events: none;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #888;
+        text-align: center;
+    }
+
+
+    /*** handling WebGL errors ***/
+
+    .no-curtains #planes {
+        transition: background-color 0.5s;
+    }
+
+    .no-curtains #planes.dragged {
+        background-color: #0d0d0d;
+    }
+
+    .no-curtains .plane-title {
+        opacity: 1;
+    }
+
+    .no-curtains .plane {
+        display: flex;
+        overflow: hidden;
+        transition: filter 0.5s;
+    }
+
+    .no-curtains #planes.dragged .plane {
+        filter: grayscale(1);
+    }
+
+    .no-curtains .plane img {
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+
+
+
+@media screen and (orientation: portrait) {
+
+    #content {
+        max-height: 100vh;
+    }
+
+    #planes {
+        overflow: hidden;
+        width: 100vw;
+
+        padding: 2.5vh 0;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .plane-wrapper {
+        position: relative;
+
+        width: 70vw;
+        height: calc(100vh / 1.75);
+        margin: 5vw 0;
+    }
+
+    .plane-title {
+        font-size: 10vw;
+    }
+
+}

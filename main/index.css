@@ -1,0 +1,246 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: url('cursor.png'), auto !important;
+}
+html{
+	scroll-behavior: smooth;
+}
+span{
+	display: inline-block;
+}
+body {
+	overflow-y: hidden; 
+	overflow-x: hidden;
+	background: white;
+}
+#instructions {
+	position: absolute;
+	color: #666;
+	bottom: 0;
+	padding-bottom: 6px;
+	font-family: sans-serif;
+	width: 100%;
+	text-align: center;
+	pointer-events: none;
+}
+
+/* Navigation */
+#ncont{
+	position: relative;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	background: url('navbg.png');
+}
+h2{
+	position: relative;
+	font-size: 4vw;
+	font-family: "Sweetly Broken";
+	color: #01fe87;
+	letter-spacing: 4px;
+	text-shadow: 1px 1px 8px black; 
+}
+/* Navigation Closed */
+
+/* Menu */
+#mbtn{
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 80px;
+	height: 70px;
+	width: 70px;
+	background: #000;
+	z-index: 1;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 5px;
+	color: white;
+	font-size: 3.5rem;
+	transition: .5s;
+	transform: rotate(0deg);
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .7),
+				-4px -4px 10px rgba(0, 0, 0, .7);
+}
+#mcont{
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	top: -100%;
+	background: url('images/bg.jpg');
+	background-size: cover;
+	transition: 1s;
+}
+.mcontent {
+	top: -100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	transition: 1s;
+}
+.distort {
+	position: absolute;
+	pointer-events: none;
+	will-change: transform;
+	z-index: 1;
+}
+.distort__img {
+	opacity: 0;
+}
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	text-align: center;
+	font-size: 10vh;
+	font-weight: normal;
+	line-height: 1.5;
+}
+.menu__link {
+	z-index: 1;
+	color: #FAF6F1;
+	position: relative;
+	white-space: nowrap;
+}
+.menu__link:hover {
+	color: #FAF6F1;
+}
+/* Menu Closed */
+
+/* Main Slider */
+#mscont{
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 500px;
+	border: none;
+	display: none;
+	z-index: 0;
+}
+/* Main Slider Closed*/
+
+/* Top picks Slider */
+#tpscont{
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 500px;
+	border: none;
+	z-index: 0;
+}
+/* Top picks Slider */
+
+/* scroll down */
+.scrolldown{
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	transform: translateY(-80px) translateX(-50%) rotate(45deg);
+}
+.scrolldown span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	animation: scrolldoit 1.5s linear infinite;
+	opacity: 0;
+}
+.scrolldown span:nth-child(1){
+	transform: translate(-15px, -15px);
+	animation-delay: -0.4s;
+}
+.scrolldown span:nth-child(2){
+	transform: translate(0, 0);
+	animation-delay: -0.2s;
+}
+.scrolldown span:nth-child(3){
+	transform: translate(15px, 15px);
+	animation-delay: 0s;
+}
+@keyframes scrolldoit{
+	0%{
+		top: -5px;
+		left: -5px;
+		opacity: 0;
+	}
+	25%{
+		top: 0px;
+		left: 0px;
+		opacity: 1;
+	}
+	50%,100%{
+		top: 5px;
+		left: 5px;
+		opacity: 0;
+	}
+}
+/* scroll down Closed*/
+
+/* prog bar */
+#progbar{
+	z-index: 3;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 10px;
+	background: linear-gradient(to top,#008aff,#00ffe7);
+	animation: progani 5s linear infinite; 
+}
+#progbar::before{
+	z-index: 3;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	filter: blur(10px);
+	background: linear-gradient(to top,#008aff,#00ffe7);
+}
+@keyframes progani{
+	0%{
+		filter: hue-rotate(0deg);
+	}
+	100%{
+		filter: hue-rotate(360deg);
+	}
+}
+#scrollpath{
+	z-index: 3;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 100%;
+	background: rgba(255, 255, 255, .05);
+}
+::-webkit-scrollbar{
+	width: 0;
+}
+#percent{
+	z-index: 3;
+	position: fixed;
+	top: 50%;
+	right: -6%;
+	color: #fff;
+	transform: rotate(-90deg);
+	font-size: 1.3em;
+	text-shadow: 1px 1px 4px #000;
+}
+/* prog bar Closed*/

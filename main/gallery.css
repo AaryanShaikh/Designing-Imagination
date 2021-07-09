@@ -1,0 +1,188 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	cursor: url('cursor.png'), auto !important;
+}
+body{
+	background: url('galleryBG.jpg');
+	background-size: cover;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex-container .container {
+	background: #000;
+  width: 320px;
+  height: 460px;
+  margin: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px #000;
+}
+.flex-container .container img{
+	width: 300px;
+  height: 300px;
+  margin: 10px;	
+}
+.flex-container .container h2{
+	color: white;
+	margin: 10px;
+}
+.flex-container .container p{
+	color: white;
+	margin: 10px;
+}
+.back{
+	position: absolute;
+	top: 20px;
+	left: 7%;
+	text-decoration: none;
+	font-size: 2em;
+	color: white;
+}
+.fcontainer{
+	display: none;
+	position: fixed;
+	top: 30%;
+	left: 40%;
+	height: 270px;
+	width: 420px;
+	border-radius: 50px;
+	background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+	box-shadow:  5px 5px 10px #000,
+             -5px -5px 10px #000;
+}
+span{
+	display: inline-block;
+}
+#gname{
+	font-size: 3em;
+}
+.closeBtn{
+	position: absolute;
+	top: 27px;
+	left: 88%;
+	cursor: pointer;
+}
+.fcontainer h2{
+	color: white;
+	margin-top: 20px;
+}
+.fcontainer input[type="text"]{
+	-webkit-appearance: none;
+	height: 30px;
+	margin-top: 10px;
+	border-radius: 20px;
+	text-align: center;
+	border: none;
+	outline: none;
+}
+.fcontainer input[type="file"]{
+	margin-top: 10px;
+	color: #fff;
+}
+.fcontainer button{
+	margin-top: 10px;
+	height: 50px;
+	width: 100px;
+	border-radius: 50px;
+	transition: .5s ease;
+	border: none;
+	outline: none;
+	box-shadow: 2px 2px 20px #000;
+}
+.fcontainer button:hover{
+	background: #111;
+	color: #fff;
+	transition: .5s ease;
+}
+.hoverBtn{
+	position: fixed;
+	top: 10px;
+	left: 90%;
+	height: 100px;
+	width: 100px;
+	background: #000;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: 2px 2px 20px #000;
+	cursor: pointer;	
+}
+.hoverBtn h2{
+	color: white;
+	margin-top: 33px;
+	cursor: pointer;
+}
+.searchBtn{
+	position: fixed;
+	top: 10px;
+	left: 80%;
+	height: 100px;
+	width: 100px;
+	background: #000;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: 2px 2px 20px #000;
+	cursor: pointer;	
+}
+.deleteBtn{
+	position: fixed;
+	top: 10px;
+	left: 70%;
+	height: 100px;
+	width: 100px;
+	background: #000;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: 2px 2px 20px #000;
+	cursor: pointer;	
+}
+.deleteBtn h2{
+	color: white;
+	margin-top: 33px;
+	cursor: pointer;
+}
+.searchBtn h2{
+	color: white;
+	margin-top: 33px;
+	cursor: pointer;
+}
+.sform{
+	display: none;
+	position: fixed;
+	border: 1px solid #fff;
+	height: 20vh;
+	width: 50vw;
+	left: 20%;
+	top: 50%;
+	background: #333;
+	padding-top: 50px;
+}
+.dform{
+	display: none;
+	position: fixed;
+	border: 1px solid #fff;
+	height: 20vh;
+	width: 50vw;
+	left: 20%;
+	top: 50%;
+	background: #333;
+	padding-top: 50px;
+	color: lime;
+}
+.closeBtnS{
+	position: absolute;
+	top: 27px;
+	left: 88%;
+	cursor: pointer;
+	color: white;
+}
+.closeBtnD{
+	position: absolute;
+	top: 27px;
+	left: 88%;
+	cursor: pointer;
+	color: white;
+}

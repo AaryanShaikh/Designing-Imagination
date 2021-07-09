@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teams</title>
+	<link rel="stylesheet" type="text/css" href="teams.css">
+</head>
+<body>
+	<a href="index.php" class="back">< Back</a>
+	<h2 id="heading">Meet The Team</h2>
+		<div class="container">
+			<div class="box" data-tilt data-tilt-reverse="true">
+				<div class="imgBx">
+					<img src="images/cypher.png">
+				</div>
+				<div class="content">
+					<h2>Aaryan Shaikh</h2>
+					<p>Nothing much about me! Just some random average Web Developer! </p>
+					<a href="#">Read More!</a>
+				</div>
+			</div>
+			<div class="box" data-tilt data-tilt-reverse="true">
+				<div class="imgBx">
+					<img src="images/jaduu.png">
+				</div>
+				<div class="content">
+					<h2>Rashmi Sehgal</h2>
+					<p>I am a multidisciplinary designer with a curious mind and always eager to learn about the new technologies and design trends.</p>
+					<a href="#">Read More!</a>
+				</div>
+			</div>
+			<div class="box" data-tilt data-tilt-reverse="true">
+				<div class="imgBx t">
+					<img src="images/murga.png">
+				</div>
+				<div class="content">
+					<h2>Bhawesh Deshmuk</h2>
+					<p>I am a Flutter Developer and specisalizes in android and IOS application development.</p>
+					<a href="#">Read More!</a>
+				</div>
+			</div>
+			<div class="box" data-tilt data-tilt-reverse="true">
+				<div class="imgBx">
+					<img src="images/beegee.png">
+				</div>
+				<div class="content">
+					<h2>Nehal Narvekar</h2>
+					<p>I am an Android Developer and Web Developer.</p>
+					<a href="#">Read More!</a>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="vanilla-tilt.js"></script>
+	<script type="text/javascript" src="anime.min.js"></script>
+	<script type="module">
+import Letterize from "https://cdn.skypack.dev/letterizejs@2.0.0";
+const test = new Letterize({
+      targets: "#heading"
+    });
+
+    var animation = anime.timeline({
+      targets: test.listAll,
+      delay: anime.stagger(50),
+      loop: true
+    });
+
+    animation
+      .add({
+        scale: 0.4,
+        transformX: 20
+      })
+      .add({
+        scale: 1,
+        rotate: 0
+      });
+</script>
+</body>
+</html>
